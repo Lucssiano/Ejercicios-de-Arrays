@@ -8,7 +8,23 @@ b) Los números de legajo son números no correlativos de 4 cifras.
 
 using namespace std;
 
+void inicVec(int v[], int cant);
+
 int main()
 {
+  const int cantEmple = 100;
+  int sueldos[cantEmple], legajos[cantEmple];
+
+  inicVec(sueldos, cantEmple);
+  inicVec(legajos, cantEmple);
+
   return 0;
+}
+
+// void ingresoDeDatos(int sueldos[], int leg[],  )
+
+void inicVec(int v[], int cant)
+{
+  for (int i = 0; i < cant; i++)
+    v[i] = 0;
 }

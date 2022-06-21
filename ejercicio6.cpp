@@ -40,4 +40,4 @@ int main()
   return 0;
 }
 
-// Se puede hacer mejor con un vector
+// Recorre muchas veces el vector, la profe hizo una mejor forma

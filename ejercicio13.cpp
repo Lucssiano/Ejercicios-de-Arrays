@@ -1,4 +1,4 @@
-/* 13- Se tiene un vector de notas (cada elemento tiene nombre del alumnos y nota obtenida)
+/* 13- Se tiene un vector de notas (cada elemento tiene nombre del alumno y nota obtenida)
 correspondientes al primer parcial y otro vector del mismo tipo del anterior con las notas
 correspondientes al segundo parcial, ambos vectores están ordenados alfabéticamente por nombre.
 Se pide hacer un listado ordenado por nombre con la condición obtenida por el alumno en la
@@ -13,5 +13,12 @@ using namespace std;
 
 int main()
 {
+  int cantAlumnos;
+
+  cout << "Ingrese la cantidad de alumnos del curso: ";
+  cin >> cantAlumnos;
+
+  float notas[cantAlumnos];
+
   return 0;
 }
