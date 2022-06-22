@@ -15,7 +15,7 @@ struct Alumno
 
 void burbujeo(Alumno v[], unsigned t);
 void cargarVector(Alumno v[], int t);
-Alumno ingresarAlum();
+Alumno ingresarAlum(int nroAlum);
 void mostrarMayorYMenorNota(Alumno v[], int cant);
 
 int main()
@@ -40,15 +40,15 @@ int main()
 void cargarVector(Alumno v[], int t)
 {
   for (int i = 0; i < t; i++)
-    v[i] = ingresarAlum();
+    v[i] = ingresarAlum(i);
 }
 
-Alumno ingresarAlum()
+Alumno ingresarAlum(int nroAlum)
 {
   Alumno alum;
-  cout << "Ingrese la nota del alumno: ";
+  cout << "Ingrese la nota del alumno " << nroAlum << ": ";
   cin >> alum.nota;
-  cout << "Ingrese el dni del alumno: ";
+  cout << "Ingrese el dni del alumno " << nroAlum << ": ";
   cin >> alum.dni;
   return alum;
 }

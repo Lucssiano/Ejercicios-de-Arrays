@@ -89,8 +89,9 @@ void suma(int vA[], int vB[], int cant, int suma[])
             if (k != 0)
                 suma[k - 1] = suma[k - 1] + 1;
         }
-        cout << suma[k] << " suma[k]" << endl;
     }
+    for (int l = 0; l < cant; l++)
+        cout << suma[l] << " suma[l]" << endl;
 }
 
 /* #include <iostream>
