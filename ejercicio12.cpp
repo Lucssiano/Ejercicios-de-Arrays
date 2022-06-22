@@ -31,8 +31,8 @@ int main()
   burbujeo(vecAlumnos, cantAlumnos);
   mostrarMayorYMenorNota(vecAlumnos, cantAlumnos);
 
-  for (int i = 0; i < cantAlumnos; i++)
-    cout << "alumno dni " << vecAlumnos[i].dni << " alumno nota " << vecAlumnos[i].nota << endl;
+  // for (int i = 0; i < cantAlumnos; i++)
+  //   cout << "alumno dni " << vecAlumnos[i].dni << " alumno nota " << vecAlumnos[i].nota << endl;
 
   return 0;
 }
@@ -40,7 +40,7 @@ int main()
 void cargarVector(Alumno v[], int t)
 {
   for (int i = 0; i < t; i++)
-    v[i] = ingresarAlum(i);
+    v[i] = ingresarAlum(i + 1);
 }
 
 Alumno ingresarAlum(int nroAlum)
@@ -55,12 +55,17 @@ Alumno ingresarAlum(int nroAlum)
 
 void mostrarMayorYMenorNota(Alumno v[], int cant)
 {
-  for (int i = 0; i < cant; i++)
+  int j = 0;
+  int k = cant - 1;
+  while (v[0].nota == v[j].nota)
   {
-    if (i == 0) // verificar que muestre bien
-      cout << "El alumno con la mayor nota es aquel de DNI " << v[i].dni << " y obtuvo una nota de " << v[i].nota << endl;
-    else if (i == cant - 1)
-      cout << "El alumno con la menor nota es aquel de DNI " << v[i].dni << " y obtuvo una nota de " << v[i].nota << endl;
+    cout << "El alumno con la mayor nota es aquel de DNI " << v[j].dni << " y obtuvo una nota de " << v[j].nota << endl;
+    j++;
+  }
+  while (v[cant - 1].nota == v[k].nota)
+  {
+    cout << "El alumno con la menor nota es aquel de DNI " << v[k].dni << " y obtuvo una nota de " << v[k].nota << endl;
+    k--;
   }
 }
 

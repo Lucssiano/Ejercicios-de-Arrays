@@ -40,12 +40,17 @@ void ingresoDeValores(float vNot[], float vDoc[], int cant)
 
 void mostrarMayorYMenorNota(float vNot[], float vDoc[], int cant)
 {
-  for (int i = 0; i < cant; i++)
+  int j = 0;
+  int k = cant - 1;
+  while (vNot[0] == vNot[j])
   {
-    if (i == 0)
-      cout << "El alumno con la mayor nota es aquel de DNI " << vDoc[i] << " y obtuvo una nota de " << vNot[i] << endl;
-    else if (i == cant - 1)
-      cout << "El alumno con la menor nota es aquel de DNI " << vDoc[i] << " y obtuvo una nota de " << vNot[i] << endl;
+    cout << "El alumno con la mayor nota es aquel de DNI " << vDoc[j] << " y obtuvo una nota de " << vNot[j] << endl;
+    j++;
+  }
+  while (vNot[cant - 1] == vNot[k])
+  {
+    cout << "El alumno con la menor nota es aquel de DNI " << vDoc[k] << " y obtuvo una nota de " << vNot[k] << endl;
+    k--;
   }
 }
 
