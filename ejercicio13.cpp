@@ -14,7 +14,7 @@ using namespace std;
 struct Alumno
 {
   string nombre;
-  float notaPrimerP, notaSegundoP;
+  float nota;
 };
 
 Alumno ingresarAlum(int nroAlum, string p, string nomAlum);
@@ -29,7 +29,7 @@ int main()
   cout << "Ingrese la cantidad de alumnos del curso: ";
   cin >> cantAlumnos;
 
-  Alumno alumPrimerP[cantAlumnos], alumSegundoP[cantAlumnos], listado[cantAlumnos];
+  Alumno alumPrimerP[cantAlumnos], alumSegundoP[cantAlumnos];
   cargarVector(alumPrimerP, alumSegundoP, cantAlumnos);
   burbujeo(alumPrimerP, cantAlumnos);
   burbujeo(alumSegundoP, cantAlumnos);
@@ -54,16 +54,8 @@ Alumno ingresarAlum(int nroAlum, string p, string nomAlum)
 {
   Alumno alum;
   alum.nombre = nomAlum;
-  if (p == "primer parcial")
-  {
-    cout << "Ingrese la nota del primer parcial del alumno " << nroAlum << ": ";
-    cin >> alum.notaPrimerP;
-  }
-  else if (p == "segundo parcial")
-  {
-    cout << "Ingrese la nota del segundo parcial del alumno " << nroAlum << ": ";
-    cin >> alum.notaSegundoP;
-  }
+  cout << "Ingrese la nota del " << p << " del alumno " << nroAlum << ": ";
+  cin >> alum.nota;
   return alum;
 }
 
@@ -71,12 +63,12 @@ void listadoOrdenado(Alumno v[], Alumno v2[], int t)
 {
   for (int i = 0; i < t; i++)
   {
-    if (v[i].notaPrimerP >= 8 && v2[i].notaSegundoP >= 8)
-      cout << "El alumno " << v[i].nombre << " promociona con una nota de " << v[i].notaPrimerP << " en el primer parcial, y una nota de " << v2[i].notaSegundoP << " en el segundo parcial" << endl;
-    else if (v[i].notaPrimerP >= 6 && v2[i].notaSegundoP >= 6)
-      cout << "El alumno " << v[i].nombre << " rinde final con una nota de " << v[i].notaPrimerP << " en el primer parcial, y una nota de " << v2[i].notaSegundoP << " en el segundo parcial" << endl;
-    else if (v[i].notaPrimerP < 6 || v2[i].notaSegundoP < 6)
-      cout << "El alumno " << v[i].nombre << " recursa con una nota de " << v[i].notaPrimerP << " en el primer parcial, y una nota de " << v2[i].notaSegundoP << " en el segundo parcial" << endl;
+    if (v[i].nota >= 8 && v2[i].nota >= 8)
+      cout << "El alumno " << v[i].nombre << " promociona con una nota de " << v[i].nota << " en el primer parcial, y una nota de " << v2[i].nota << " en el segundo parcial" << endl;
+    else if (v[i].nota >= 6 && v2[i].nota >= 6)
+      cout << "El alumno " << v[i].nombre << " rinde final con una nota de " << v[i].nota << " en el primer parcial, y una nota de " << v2[i].nota << " en el segundo parcial" << endl;
+    else if (v[i].nota < 6 || v2[i].nota < 6)
+      cout << "El alumno " << v[i].nombre << " recursa con una nota de " << v[i].nota << " en el primer parcial, y una nota de " << v2[i].nota << " en el segundo parcial" << endl;
   }
 }
 
